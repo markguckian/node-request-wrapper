@@ -4,7 +4,7 @@
   "description": "HTTP request wrapper for node",
   "main": "src/index.js",
   "bin": {
-    "node-request-wrapper": "bin/index"
+    "node-request-wrapper": "bin/node-request-wrapper"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/markguckian/node-request-wrapper#readme",
   "dependencies": {
     "axios": "^0.16.2",
+    "colors": "^1.1.2",
     "commander": "^2.11.0"
   }
 }
