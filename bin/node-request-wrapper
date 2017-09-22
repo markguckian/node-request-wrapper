@@ -1,0 +1,48 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var colors = require('colors');
+var version = require('../package.json').version;
+var nodeRequestWrapper = require('../src/index');
+
+var options = program
+.version(version)
+.option(
+    '-u, --url [URL] <string>',
+    'URL to request. *Mandatory*'
+)
+.option(
+    '-t, --type [HTTP request type] <string>',
+    'HTTP request type. *Mandatory*'
+)
+.option(
+    '-o, --output [Filepath of file to contain JSON response data] <string>',
+    'Path to JSON data to be used to store contents of a successful request'
+)
+.option(
+    '-f, --file [Filepath of file containing JSON data] <string>',
+    'Path to JSON data to be used in the request'
+)
+.option(
+    '-o, --timeout [Request timeout in ms.] <int>',
+    'Timeout for the request'
+)
+.option(
+    '-k, --token [Authentication token] <string>',
+    'Authentication token'
+)
+.option(
+    '-d, --debug [Turn on debugging] <boolean>',
+    'Turn on debug logging, prints logs to stdout'
+)
+.parse(process.argv);
+
+if (!process.argv.slice(2).length || !options) {
+  program.outputHelp(make_red);
+}
+
+function make_red(txt) {
+  return colors.red(txt);
+}
+
+nodeRequestWrapper(options);

@@ -1,0 +1,27 @@
+{
+  "name": "node-request-wrapper",
+  "version": "0.1.0",
+  "description": "HTTP request wrapper for node",
+  "main": "src/index.js",
+  "bin": {
+    "node-request-wrapper": "bin/index"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markguckian/node-request-wrapper.git"
+  },
+  "keywords": ["http", "request", "wrapper", "axios", "node"],
+  "author": "'Mark Guckian <'markguckian@gmail.com'>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/markguckian/node-request-wrapper/issues"
+  },
+  "homepage": "https://github.com/markguckian/node-request-wrapper#readme",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "commander": "^2.11.0"
+  }
+}
